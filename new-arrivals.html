@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Arrivals — ADDO INDIA</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        bone: '#F2ECE0',
+        cream: '#FAF6EC',
+        ink: '#16120E',
+        espresso: '#201913',
+        smoke: '#3A3027',
+        gold: '#B38A44',
+        goldsoft: '#D9B97F',
+        champagne: '#E9D6AE',
+        moss: '#2E3A2C',
+        clay: '#96421E',
+        taupe: '#8A7A5F',
+        line: '#E0D4BE',
+        mist: '#EFE6D3'
+      },
+      fontFamily: {
+        serif: ['"Italiana"', 'Georgia', 'serif'],
+        accent: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"Manrope"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    background: #FAF6EC; color: #16120E;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content:''; position: fixed; inset: 0; z-index: 99; pointer-events: none; opacity: .04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection { background: #B38A44; color: #FAF6EC; }
+  ::-webkit-scrollbar { width: 9px; }
+  ::-webkit-scrollbar-track { background: #F2ECE0; }
+  ::-webkit-scrollbar-thumb { background: #C9A96C; border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: #B38A44; }
+
+  .font-serif { font-family: "Italiana", Georgia, serif; }
+  .font-accent { font-family: "Cormorant Garamond", Georgia, serif; }
+
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .animate-marquee { animation: marquee 30s linear infinite; }
+  .marquee-track:hover .animate-marquee { animation-play-state: paused; }
+
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  .floaty { animation: floaty 6s ease-in-out infinite; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(32px); } to { opacity: 1; transform: none; } }
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  .line-mask { display: block; overflow: hidden; }
+  .line-inner { display: block; transform: translateY(110%); transition: transform 1.1s cubic-bezier(.16,1,.3,1); }
+  .reveal .line-inner { transform: translateY(110%); }
+  .reveal.in .line-inner { transform: translateY(0); }
+
+  .text-outline { -webkit-text-stroke: 1.2px rgba(22,18,14,.16); color: transparent; }
+  .text-outline-gold { -webkit-text-stroke: 1px rgba(179,138,68,.45); color: transparent; }
+  .text-outline-cream { -webkit-text-stroke: 1px rgba(250,246,236,.28); color: transparent; }
+
+  .img-hover { transition: transform 1.3s cubic-bezier(.16,1,.3,1); will-change: transform; }
+  .group:hover .img-hover { transform: scale(1.07); }
+  .card-img { transition: transform 1.2s cubic-bezier(.16,1,.3,1); }
+  .group:hover .card-img { transform: translateY(-10px); }
+
+  .quick-add { transform: translateY(115%); transition: transform .5s cubic-bezier(.16,1,.3,1); }
+  .group:hover .quick-add { transform: translateY(0); }
+
+  @media (hover: none) and (pointer: coarse) {
+    .quick-add { transform: translateY(0); }
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+
+  .grain-grad::after {
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(22,18,14,.35));
+  }
+
+  .arch { border-radius: 999px 999px 14px 14px; }
+  .arch-sm { border-radius: 999px 999px 10px 10px; }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content:''; position:absolute; left:0; bottom:-5px; height:1px; width:0%;
+    background: linear-gradient(90deg,#B38A44,#D9B97F); transition: width .4s cubic-bezier(.16,1,.3,1);
+  }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link.active { color: #B38A44; }
+
+  .btn-lux { position: relative; overflow: hidden; transition: color .45s ease; }
+  .btn-lux::before {
+    content:''; position:absolute; inset:0; transform: scaleX(0); transform-origin: left;
+    transition: transform .5s cubic-bezier(.16,1,.3,1); background: currentColor; z-index:-1;
+  }
+  .btn-lux:hover::before { transform: scaleX(1); }
+
+  .tabs button { transition: all .35s ease; }
+  .tabs button.active { background: #16120E; color: #FAF6EC; border-color: #16120E; box-shadow: 0 10px 25px -12px rgba(22,18,14,.5); }
+
+  .magnetic { transition: transform .25s cubic-bezier(.16,1,.3,1); }
+  .lux-card { transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s ease; }
+  .lux-card:hover { transform: translateY(-6px); }
+  #scrollbar { transform-origin: 0 50%; }
+
+  .drop-hidden { opacity: 0; transform: scale(.96); }
+  select { appearance: none; -webkit-appearance: none; }
+</style>
+</head>
+<body class="overflow-x-hidden">
+
+<div id="scrollbar" class="fixed top-0 left-0 h-[2px] w-full bg-gradient-to-r from-goldsoft via-gold to-clay z-[90] scale-x-0"></div>
+
+<!-- ANNOUNCEMENT -->
+<div class="bg-ink text-cream text-[10px] tracking-[0.24em] uppercase overflow-hidden marquee-track relative z-40">
+  <div class="flex items-center justify-between px-4 sm:px-6 py-2.5 absolute inset-0 pointer-events-none">
+    <span class="hidden sm:inline text-goldsoft/80">Free Signature Gift Box · Code ADDOI26</span>
+    <span id="countdown" class="flex items-center gap-2 text-cream/90 whitespace-nowrap">Drop ends in <span id="cdTime" class="text-goldsoft">--:--:--</span></span>
+  </div>
+  <div class="flex whitespace-nowrap w-max animate-marquee py-3.5">
+    <span class="mx-8">New Arrivals — Spring '26</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">Buy 2, Get 1 Free — Ends Midnight</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">Extra 5% Off on Prepaid Pay</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">Complimentary Worldwide Delivery</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">New Arrivals — Spring '26</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">Buy 2, Get 1 Free — Ends Midnight</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">Extra 5% Off on Prepaid Pay</span>
+    <span class="mx-8 text-goldsoft">✦</span>
+    <span class="mx-8">Complimentary Worldwide Delivery</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="sticky top-0 z-50 transition-all duration-500 bg-cream/90 backdrop-blur-xl border-b border-line/70">
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-10 grid grid-cols-[1fr_auto_1fr] items-center h-16 lg:h-20">
+    <nav class="hidden lg:flex items-center gap-8 text-[11px] tracking-[0.22em] uppercase text-espresso">
+      <a class="nav-link active hover:text-gold transition" href="new-arrivals.html">New Arrivals</a>
+      <a class="nav-link hover:text-gold transition" href="index.html#bestsellers">Best Sellers</a>
+      <div class="relative group">
+        <button class="nav-link hover:text-gold transition flex items-center gap-1.5">Collections
+          <svg class="h-3 w-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </button>
+        <div class="absolute left-0 top-full pt-5 hidden group-hover:block group-focus-within:block" style="width:min(580px,80vw)">
+          <div class="bg-cream border border-line shadow-[0_40px_80px_-30px_rgba(22,18,14,.3)] p-4 grid grid-cols-4 gap-2">
+            <a class="group/m flex flex-col gap-3 items-center p-3 hover:bg-bone transition" href="index.html#moments">
+              <img src="https://addoindia.com/wp-content/uploads/2026/09/photo-1544816155-12df9643f363-1.avif" class="h-20 w-20 arch-sm object-cover" loading="lazy" alt="">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-espresso group-hover/m:text-gold transition">En Route</span>
+            </a>
+            <a class="group/m flex flex-col gap-3 items-center p-3 hover:bg-bone transition" href="index.html#bestsellers">
+              <img src="https://addoindia.com/wp-content/uploads/2026/09/IMG_0578.jpeg" class="h-20 w-20 arch-sm object-cover" loading="lazy" alt="">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-espresso group-hover/m:text-gold transition">The Sovereign</span>
+            </a>
+            <a class="group/m flex flex-col gap-3 items-center p-3 hover:bg-bone transition" href="index.html#lookbook">
+              <img src="https://addoindia.com/wp-content/uploads/2026/09/IMG_0707.jpeg" class="h-20 w-20 arch-sm object-cover" loading="lazy" alt="">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-espresso group-hover/m:text-gold transition">Twilight</span>
+            </a>
+            <a class="group/m flex flex-col gap-3 items-center p-3 hover:bg-bone transition" href="index.html#bestsellers">
+              <img src="https://addoindia.com/wp-content/uploads/2026/09/IMG_0803.jpeg" class="h-20 w-20 arch-sm object-cover" loading="lazy" alt="">
+              <span class="text-[10px] tracking-[0.2em] uppercase text-espresso group-hover/m:text-gold transition">Color Rush</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <a href="index.html" class="flex flex-col items-center leading-none">
+      <span class="font-serif text-xl sm:text-2xl lg:text-3xl tracking-[0.22em] uppercase text-ink">Addo India</span>
+      <span class="text-[8px] tracking-[0.42em] uppercase text-gold mt-1.5 hidden sm:block">Luxury Vegan Leather</span>
+    </a>
+
+    <div class="flex items-center justify-end gap-1 lg:gap-2 text-espresso">
+      <button class="p-2 hover:text-gold transition" aria-label="Search">
+        <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/></svg>
+      </button>
+      <button class="hidden sm:p-2 sm:inline-block hover:text-gold transition" aria-label="Wishlist">
+        <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
+      </button>
+      <button id="cartBtn" class="p-2 relative hover:text-gold transition" aria-label="Cart">
+        <svg class="h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z"/></svg>
+        <span id="cartCount" class="absolute -top-0.5 -right-0.5 h-[17px] min-w-[17px] px-0.5 rounded-full bg-gold text-cream text-[9px] flex items-center justify-center">0</span>
+      </button>
+      <button id="menuBtn" class="lg:hidden p-2 ml-1" aria-label="Menu">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed inset-0 z-[80] hidden">
+  <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm" data-close-menu></div>
+  <div class="absolute left-0 top-0 h-full w-[84%] max-w-sm bg-cream shadow-2xl flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-line">
+      <span class="font-serif text-xl tracking-[0.22em] uppercase">Addo India</span>
+      <button data-close-menu class="p-2" aria-label="Close">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-auto px-7 py-8 flex flex-col gap-4 text-[12px] tracking-[0.25em] uppercase text-espresso">
+      <a data-close-menu href="new-arrivals.html" class="flex items-center justify-between border-b border-line/60 pb-4 text-gold"><span>New Arrivals</span><span class="text-gold font-accent italic text-base lowercase">Drop 01</span></a>
+      <a data-close-menu href="index.html#bestsellers" class="flex items-center justify-between border-b border-line/60 pb-4"><span>Best Sellers</span><span class="text-gold font-accent italic text-base lowercase">Most Loved</span></a>
+      <a data-close-menu href="index.html#categories" class="flex items-center justify-between border-b border-line/60 pb-4"><span>Categories</span><span class="text-gold font-accent italic text-base lowercase">Shapes</span></a>
+      <a data-close-menu href="index.html#featured" class="flex items-center justify-between border-b border-line/60 pb-4"><span>The 9-to-5</span><span class="text-gold font-accent italic text-base lowercase">Edit</span></a>
+      <a data-close-menu href="index.html#lookbook" class="flex items-center justify-between border-b border-line/60 pb-4"><span>Lookbook</span><span class="text-gold font-accent italic text-base lowercase">Runway</span></a>
+      <a data-close-menu href="index.html#promise" class="flex items-center justify-between border-b border-line/60 pb-4"><span>The Promise</span><span class="text-gold font-accent italic text-base lowercase">Care</span></a>
+    </nav>
+    <div class="p-6 flex items-center gap-10 text-[10px] tracking-[0.25em] uppercase text-taupe">
+      <span>Free Delivery</span><span class="text-gold">✦</span><span>Vegan</span><span class="text-gold">✦</span><span>1-Yr Warranty</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="relative bg-bone overflow-hidden shop-hero">
+  <div class="absolute -top-28 left-1/2 -translate-x-1/2 h-96 w-[900px] rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute right-2 top-1/2 -translate-y-1/2 font-serif text-[16vw] leading-none text-outline select-none pointer-events-none hidden lg:block">Nº 01</div>
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-10 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative">
+    <div class="text-center lg:text-left">
+      <p class="reveal flex items-center justify-center lg:justify-start gap-4 text-[10px] tracking-[0.5em] uppercase text-gold mb-6">
+        <span class="h-px w-12 bg-gradient-to-r from-gold to-transparent"></span> Spring '26 · Drop 01<span class="hidden lg:block h-px w-12 bg-gradient-to-l from-gold to-transparent"></span>
+      </p>
+      <h1 class="font-serif text-[15vw] sm:text-7xl xl:text-8xl text-ink leading-none lg:text-left">
+        <span class="line-mask reveal"><span class="line-inner">New <span class="font-accent italic font-medium text-gold">Arrivals</span></span></span>
+      </h1>
+      <p class="reveal mt-7 max-w-xl mx-auto lg:mx-0 text-taupe font-light leading-relaxed" style="transition-delay:.15s">
+        Seven fresh silhouettes, drawn from the Spring '26 sketchbooks — structured, sinuous,
+        and engineered for the woman who leads. First dibs, before the world catches up.
+      </p>
+      <div class="reveal mt-9 flex flex-wrap items-center justify-center lg:justify-start gap-3" style="transition-delay:.22s">
+        <a href="#productGrid" class="magnetic group inline-flex items-center gap-3 bg-ink text-cream hover:text-ink btn-lux px-9 py-4 text-[10px] tracking-[0.32em] uppercase">
+          <span class="relative z-10 flex items-center gap-3">Shop The Drop
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-1.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </span>
+        </a>
+        <a href="index.html#moments" class="group inline-flex items-center gap-3 px-7 py-4 text-[10px] tracking-[0.32em] uppercase text-espresso border border-ink/20 hover:border-gold transition">
+          Watch The Film
+        </a>
+      </div>
+      <div class="reveal mt-12 pt-8 border-t border-line inline-flex flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-8 text-ink w-full" style="transition-delay:.3s">
+        <div><p class="font-serif text-3xl">07 <span class="text-gold">Models</span></p><p class="text-[9px] tracking-[0.3em] uppercase text-taupe mt-1 text-left">This Drop</p></div>
+        <div class="h-10 w-px bg-line"></div>
+        <div><p class="font-serif text-3xl">40<span class="text-gold">%</span></p><p class="text-[9px] tracking-[0.3em] uppercase text-taupe mt-1 text-left">Off Bestsellers</p></div>
+        <div class="h-10 w-px bg-line"></div>
+        <div><p class="font-serif text-3xl">48<span class="text-gold">h</span></p><p class="text-[9px] tracking-[0.3em] uppercase text-taupe mt-1 text-left">Handmade</p></div>
+      </div>
+    </div>
+
+    <div class="relative reveal flex justify-center lg:justify-end">
+      <div class="absolute -inset-6 rounded-t-[999px] border border-gold/25 pointer-events-none"></div>
+      <figure class="relative w-full max-w-[300px] sm:w-80 lg:w-[420px]">
+        <img src="https://addoindia.com/wp-content/uploads/2026/09/IMG_0773-710x1024.jpeg" alt="New season Addo India handbag" class="w-full aspect-[3/4] rounded-t-[999px] rounded-b-[28px] object-cover shadow-[0_50px_90px_-40px_rgba(22,18,14,.45)]">
+        <figcaption class="absolute -left-4 lg:-left-14 bottom-10 bg-cream border border-line px-5 py-4 shadow-[0_30px_60px_-30px_rgba(22,18,14,.35)] backdrop-blur">
+          <p class="text-[9px] tracking-[0.3em] uppercase text-gold">Drop 01 · Köln Edition</p>
+          <p class="font-accent italic text-sm text-espresso mt-1">“Just landed — the Vonn tote.”</p>
+        </figcaption>
+        <div class="absolute -top-3 -right-3 lg:-right-8 bg-ink text-cream rounded-full h-24 w-24 flex flex-col items-center justify-center rotate-12 shadow-xl">
+          <span class="font-serif text-lg leading-none">07</span>
+          <span class="text-[8px] tracking-[0.3em] uppercase mt-1 text-goldsoft">New Models</span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER + SORT BAR -->
+<section class="sticky top-16 lg:top-20 z-40 bg-cream/90 backdrop-blur-xl border-b border-line">
+  <div class="max-w-[1440px] mx-auto px-4 lg:px-10 py-3 lg:py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+    <div class="tabs flex gap-2 lg:gap-2.5 overflow-x-auto lg:flex-wrap no-scrollbar -mx-1 px-1 pb-1">
+      <button data-filter="all" class="active border border-ink/15 px-5 py-2 text-[10px] tracking-[0.25em] uppercase rounded-full flex-none">All New</button>
+      <button data-filter="tote" class="border border-ink/15 px-5 py-2 text-[10px] tracking-[0.25em] uppercase rounded-full hover:border-gold flex-none">Tote</button>
+      <button data-filter="shoulder" class="border border-ink/15 px-5 py-2 text-[10px] tracking-[0.25em] uppercase rounded-full hover:border-gold flex-none">Shoulder</button>
+      <button data-filter="handbag" class="border border-ink/15 px-5 py-2 text-[10px] tracking-[0.25em] uppercase rounded-full hover:border-gold flex-none">Top Handle</button>
+      <button data-filter="crossbody" class="border border-ink/15 px-5 py-2 text-[10px] tracking-[0.25em] uppercase rounded-full hover:border-gold flex-none">Crossbody</button>
+    </div>
+    <div class="flex items-center justify-between lg:justify-end gap-4 flex-none">
+      <span id="resultCount" class="text-[10px] tracking-[0.25em] uppercase text-taupe">07 Models</span>
+      <div class="relative">
+        <label class="sr-only" for="sortSel">Sort</label>
+        <select id="sortSel" class="border border-ink/15 bg-cream text-[10px] tracking-[0.2em] uppercase px-8 py-2 pr-8 rounded-full cursor-pointer focus:outline-none focus:border-gold hover:border-gold transition">
+          <option value="featured">Sort · Featured</option>
+          <option value="price-asc">Price · Low to High</option>
+          <option value="price-desc">Price · High to Low</option>
+          <option value="discount">Biggest Discount</option>
+        </select>
+        <svg class="h-3 w-3 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT GRID -->
+<section class="bg-cream py-14 lg:py-20">
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-10">
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-7"></div>
+
+    <div class="reveal text-center mt-16">
+      <p class="font-accent italic text-xl text-taupe">“The rest of the season, released weekly.”</p>
+      <a href="index.html#newsletter" class="magnetic group inline-flex items-center gap-3 bg-ink text-cream hover:text-ink btn-lux px-10 py-4 mt-6 text-[10px] tracking-[0.32em] uppercase">
+        <span class="relative z-10 flex items-center gap-3">Get Drop Alerts
+          <svg class="h-4 w-4 transition-transform group-hover:translate-x-1.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDITOR'S PICKS -->
+<section class="bg-bone py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-10">
+    <div class="reveal text-center max-w-xl mx-auto mb-14">
+      <p class="text-[10px] tracking-[0.5em] uppercase text-gold mb-4">Styled By The Atelier</p>
+      <h2 class="font-serif text-4xl lg:text-5xl text-ink">
+        <span class="line-mask reveal"><span class="line-inner">Editor's <span class="font-accent italic font-medium text-gold">Picks</span></span></span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-7 items-start">
+      <a href="#" class="group reveal block">
+        <div class="rounded-t-full overflow-hidden grain-grad shadow-lg">
+          <img src="https://addoindia.com/wp-content/uploads/2026/09/photo-1594223274512-ad4803739b7c.avif" class="img-hover aspect-[3/4] w-full object-cover" loading="lazy" alt="Crossbody">
+        </div>
+        <div class="pt-5 px-2">
+          <p class="text-[9px] tracking-[0.3em] uppercase text-taupe mb-1">Sculpted Utility</p>
+          <h3 class="font-serif text-2xl text-ink group-hover:text-gold transition">The Hands-Free Icon</h3>
+          <p class="text-sm font-light text-taupe mt-1">Crossbody, engineered for motion.</p>
+        </div>
+      </a>
+      <a href="#" class="group reveal block md:-mt-6" style="transition-delay:.1s">
+        <div class="rounded-t-full overflow-hidden grain-grad shadow-lg">
+          <img src="https://addoindia.com/wp-content/uploads/2026/09/photo-1548036328-c9fa89d128fa-1.avif" class="img-hover aspect-[3/4] w-full object-cover" loading="lazy" alt="Tote">
+        </div>
+        <div class="pt-5 px-2">
+          <p class="text-[9px] tracking-[0.3em] uppercase text-taupe mb-1">The Workday Icon</p>
+          <h3 class="font-serif text-2xl text-ink group-hover:text-gold transition">Tote, Refined</h3>
+          <p class="text-sm font-light text-taupe mt-1">Room for the laptop, the life, the list.</p>
+        </div>
+      </a>
+      <a href="#" class="group reveal block" style="transition-delay:.2s">
+        <div class="rounded-t-full overflow-hidden grain-grad shadow-lg">
+          <img src="https://addoindia.com/wp-content/uploads/2026/09/photo-1590874103328-eac38a683ce7.avif" class="img-hover aspect-[3/4] w-full object-cover" loading="lazy" alt="Shoulder">
+        </div>
+        <div class="pt-5 px-2">
+          <p class="text-[9px] tracking-[0.3em] uppercase text-taupe mb-1">Evening Gold Accent</p>
+          <h3 class="font-serif text-2xl text-ink group-hover:text-gold transition">The Shoulder Set</h3>
+          <p class="text-sm font-light text-taupe mt-1">Day to night, in one smooth arc.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-espresso text-cream pt-16 pb-8 border-t border-cream/10">
+  <div class="max-w-[1440px] mx-auto px-5 lg:px-10">
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-cream/10">
+      <div class="lg:col-span-2">
+        <p class="font-serif text-2xl tracking-[0.22em] uppercase">Addo India</p>
+        <p class="text-[8px] tracking-[0.42em] uppercase text-gold mt-2">Luxury Vegan Leather</p>
+        <p class="mt-6 text-sm font-light text-cream/65 max-w-sm leading-relaxed">
+          We design for women driven by instinct, ambition, and an ever-evolving sense of style.
+          Sinfully soft vegan leather, hand-finished in forty-eight hours.
+        </p>
+        <div class="mt-7 flex items-center gap-3">
+          <a href="#" class="h-10 w-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:border-gold transition" aria-label="Instagram">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v8.25A2.25 2.25 0 0 0 6 16.5h2.25m8.25-8.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-7.5A2.25 2.25 0 0 1 8.25 18v-1.5m3.75-7.5 3 3-3 3m0-6h6"/></svg>
+          </a>
+          <a href="#" class="h-10 w-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:border-gold transition" aria-label="Pinterest">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.31-.09-.79-.17-2.01.03-2.87.19-.79 1.21-5.12 1.21-5.12s-.31-.62-.31-1.54c0-1.44.84-2.51 1.88-2.51.89 0 1.32.67 1.32 1.47 0 .89-.57 2.23-.86 3.47-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.38 3.09-5.21 0-2.15-1.44-3.76-4.07-3.76-2.97 0-4.82 2.22-4.82 4.69 0 .85.25 1.45.64 1.91.18.21.21.3.14.55-.05.19-.16.66-.21.84-.07.27-.29.36-.54.26-.98-.4-1.7-1.9-1.7-3.15 0-2.64 2.23-5.81 6.65-5.81 3.55 0 5.89 2.57 5.89 5.33 0 3.65-2.03 6.38-5.03 6.38-1.01 0-1.95-.54-2.28-1.16l-.6 2.38c-.22.83-.79 1.86-1.18 2.49.89.27 1.83.42 2.8.42 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg>
+          </a>
+          <a href="#" class="h-10 w-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:border-gold transition" aria-label="Facebook">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+          </a>
+          <a href="#" class="h-10 w-10 rounded-full border border-cream/20 flex items-center justify-center hover:bg-gold hover:border-gold transition" aria-label="YouTube">
+            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-[10px] tracking-[0.35em] uppercase text-goldsoft mb-5">Shop</h4>
+        <ul class="space-y-3 text-sm font-light text-cream/65">
+          <li><a href="new-arrivals.html" class="hover:text-goldsoft transition">New Arrivals</a></li>
+          <li><a href="index.html#bestsellers" class="hover:text-goldsoft transition">Best Sellers</a></li>
+          <li><a href="index.html#categories" class="hover:text-goldsoft transition">Tote Bags</a></li>
+          <li><a href="index.html#categories" class="hover:text-goldsoft transition">Crossbody Bags</a></li>
+          <li><a href="index.html#categories" class="hover:text-goldsoft transition">Wallets & Card Holders</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] tracking-[0.35em] uppercase text-goldsoft mb-5">Collections</h4>
+        <ul class="space-y-3 text-sm font-light text-cream/65">
+          <li><a href="index.html#featured" class="hover:text-goldsoft transition">The 9-to-5 Edit</a></li>
+          <li><a href="index.html#lookbook" class="hover:text-goldsoft transition">Twilight Capsule</a></li>
+          <li><a href="index.html#moments" class="hover:text-goldsoft transition">Made for Every Moment</a></li>
+          <li><a href="index.html#lookbook" class="hover:text-goldsoft transition">The Lookbook</a></li>
+          <li><a href="index.html#promise" class="hover:text-goldsoft transition">The Promise</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-[10px] tracking-[0.35em] uppercase text-goldsoft mb-5">Support</h4>
+        <ul class="space-y-3 text-sm font-light text-cream/65">
+          <li><a href="#" class="hover:text-goldsoft transition">Track My Order</a></li>
+          <li><a href="#" class="hover:text-goldsoft transition">Returns & Exchange</a></li>
+          <li><a href="#" class="hover:text-goldsoft transition">FAQs</a></li>
+          <li><a href="#" class="hover:text-goldsoft transition">Corporate Gifting</a></li>
+          <li><a href="#" class="hover:text-goldsoft transition">Store Locator</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-7 flex flex-col lg:flex-row items-center justify-between gap-4 text-[10px] tracking-[0.25em] uppercase text-cream/40">
+      <p>© 2026 ADDO INDIA — Crafted with instinct & ambition.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
+        <span>UPI</span><span>Visa</span><span>Mastercard</span><span>RuPay</span><span>COD</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div id="cartDrawer" class="fixed inset-0 z-[85] hidden">
+  <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm" data-close-cart></div>
+  <div class="absolute right-0 top-0 h-full w-full max-w-md bg-cream shadow-2xl flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-line">
+      <div>
+        <p class="text-[9px] tracking-[0.35em] uppercase text-gold">Shopping Bag</p>
+        <h3 class="font-serif text-2xl text-ink mt-1">Your Selection</h3>
+      </div>
+      <button data-close-cart class="p-2 text-ink hover:text-gold transition" aria-label="Close">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="cartItems" class="flex-1 overflow-auto px-6 py-6 space-y-5"></div>
+    <div id="cartEmpty" class="flex-1 flex flex-col items-center justify-center px-8 text-center">
+      <div class="h-14 w-14 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-5">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z"/></svg>
+      </div>
+      <p class="font-serif text-2xl text-ink">Your bag is empty</p>
+      <p class="text-sm font-light text-taupe mt-2">Fill it with a silhouette made for your moments.</p>
+      <button data-close-cart class="mt-7 bg-ink text-cream hover:bg-gold transition px-9 py-3.5 text-[10px] tracking-[0.32em] uppercase">Continue Shopping</button>
+    </div>
+    <div id="cartFooter" class="hidden border-t border-line px-6 py-5">
+      <div class="flex items-center justify-between text-sm text-taupe">
+        <span class="tracking-[0.25em] uppercase text-[9px]">Subtotal</span>
+        <span id="cartSubtotal" class="font-serif text-2xl text-ink"></span>
+      </div>
+      <p class="text-[11px] font-light text-taupe mt-1">Extra 5% off prepaid · UPI / Cards / NetBanking / COD</p>
+      <button class="mt-4 w-full bg-ink text-cream hover:bg-gold transition py-4 text-[10px] tracking-[0.32em] uppercase">Proceed to Checkout</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[95] bg-ink/95 backdrop-blur text-cream px-8 py-4 shadow-2xl flex items-center gap-3 opacity-0 pointer-events-none transition-all duration-500 translate-y-4 border border-gold/30">
+  <svg class="h-5 w-5 text-goldsoft" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+  <span id="toastMsg" class="text-[11px] tracking-[0.2em] uppercase">Added to bag</span>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="toTop" class="fixed bottom-6 right-6 z-[60] h-12 w-12 rounded-full bg-ink text-cream items-center justify-center opacity-0 pointer-events-none transition-all duration-500 hover:bg-gold shadow-2xl" aria-label="Back to top">
+  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75 12 8.25l7.5 7.5"/></svg>
+</button>
+
+<script>
+const PRODUCTS = [
+  { id: 1, name: "ADDO Elegant Ring Handle Handbag", cat: "handbag", catLabel: "Top Handle", sale: 4495, price: 5000, offer: 10, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0554-2.jpeg", note: "Formal · Fits 11\" iPad", swatches: ["#16120E","#B38A44","#EFE6D3"], tag: "New" },
+  { id: 2, name: "Classic Black Tote with Scarf Accent", cat: "tote", catLabel: "Tote", sale: 3299, price: 4399, offer: 25, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0753.jpeg", note: "Formal · Fits 16\" Laptop", swatches: ["#16120E","#8A7A5F","#EFE6D3"], tag: "New" },
+  { id: 3, name: "ADDO Classic Structured Handbag", cat: "handbag", catLabel: "Top Handle", sale: 4295, price: 5660, offer: 24, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0578.jpeg", note: "Everyday · Structured", swatches: ["#3A3027","#16120E","#B38A44"], tag: "New" },
+  { id: 4, name: "Cream Shoulder Tote with Pom-Pom Charm", cat: "shoulder", catLabel: "Shoulder", sale: 2999, price: 3999, offer: 25, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0803.jpeg", note: "Everyday · Day to Night", swatches: ["#EFE6D3","#16120E","#96421E"], tag: "New" },
+  { id: 5, name: "Cream Elegance Chain Strap Flap Bag", cat: "crossbody", catLabel: "Crossbody", sale: 2499, price: 3299, offer: 24, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0642-2.jpeg", note: "Evening · Compact", swatches: ["#EFE6D3","#D9B97F","#2E3A2C"], tag: "New" },
+  { id: 6, name: "Tan Pebbled Satchel with Equestrian Charm", cat: "handbag", catLabel: "Top Handle", sale: 3799, price: 4799, offer: 20, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0707.jpeg", note: "Formal · Structured", swatches: ["#B38A44","#16120E","#8A7A5F"], tag: "New" },
+  { id: 7, name: "The Grand Vesper Tote (Sand Noir)", cat: "tote", catLabel: "Tote", sale: 4499, price: null, offer: 0, img: "https://addoindia.com/wp-content/uploads/2026/09/IMG_0851-1024x1024.jpeg", note: "Editor's Pick · Best Workbag", swatches: ["#16120E","#B38A44","#EFE6D3"], tag: "Editor's Pick" }
+];
+
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+const grid = document.getElementById("productGrid");
+const resultCount = document.getElementById("resultCount");
+let activeFilter = "all";
+let activeSort = "featured";
+
+function cardHTML(p) {
+  return `
+  <div class="group reveal lux-card rounded-sm bg-cream border border-line overflow-hidden hover:shadow-[0_45px_90px_-40px_rgba(22,18,14,.4)]">
+    <div class="relative overflow-hidden">
+      <img src="${p.img}" alt="${p.name}" class="card-img aspect-[4/5] w-full object-cover" loading="lazy">
+      <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-espresso/35 to-transparent"></div>
+      <span class="absolute top-3 left-3 bg-gold text-ink text-[8px] tracking-[0.18em] uppercase px-2.5 py-1.5 font-bold">${p.tag}</span>
+      ${p.offer ? `<span class="absolute top-3 right-3 bg-clay/95 backdrop-blur text-cream text-[9px] tracking-[0.2em] uppercase px-3 py-1.5">${p.offer}% Off</span>` : `<span class="absolute top-3 right-3 bg-espresso/90 text-cream text-[9px] tracking-[0.2em] uppercase px-3 py-1.5">Vogue '26</span>`}
+      <button class="quick-add absolute inset-x-4 bottom-4 bg-cream/95 backdrop-blur text-ink hover:bg-ink hover:text-cream transition py-3.5 text-[10px] tracking-[0.3em] uppercase flex items-center justify-center gap-2 shadow-lg" data-add="${p.id}">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        Add to Bag
+      </button>
+    </div>
+    <div class="p-5">
+      <div class="flex items-center justify-between">
+        <p class="text-[9px] tracking-[0.3em] uppercase text-taupe">${p.catLabel}</p>
+        <div class="flex gap-1.5">
+          ${p.swatches.map(c => `<span class="h-3.5 w-3.5 rounded-full border border-ink/20" style="background:${c}"></span>`).join("")}
+        </div>
+      </div>
+      <h3 class="font-serif text-xl text-ink mt-2 leading-snug">${p.name}</h3>
+      <p class="text-xs font-light text-taupe mt-1">${p.note}</p>
+      <div class="mt-3 flex items-end gap-2.5">
+        <span class="font-serif text-2xl text-ink">${fmt(p.sale)}</span>
+        ${p.price ? `<span class="text-sm text-taupe line-through mb-0.5">${fmt(p.price)}</span>` : `<span class="text-[10px] text-gold tracking-widest mb-0.5 uppercase">No Markdown</span>`}
+        ${p.offer ? `<span class="text-[10px] text-clay tracking-wider mb-0.5 uppercase">Save ${p.offer}%</span>` : ""}
+      </div>
+      <div class="mt-3.5 flex items-center gap-1.5 text-gold">
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="h-4 w-4 text-line" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <span class="text-[10px] text-taupe tracking-widest ml-1">4.8 (1,240)</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+function getProducts() {
+  let list = PRODUCTS.filter(p => activeFilter === "all" || p.cat === activeFilter);
+  if (activeSort === "price-asc") list = [...list].sort((a, b) => a.sale - b.sale);
+  if (activeSort === "price-desc") list = [...list].sort((a, b) => b.sale - a.sale);
+  if (activeSort === "discount") list = [...list].sort((a, b) => b.offer - a.offer);
+  return list;
+}
+
+function render() {
+  const list = getProducts();
+  const n = list.length;
+  resultCount.textContent = String(n).padStart(2, "0") + (n === 1 ? " Model" : " Models");
+  grid.innerHTML = list.map((p, i) => cardHTML(p).replace("group reveal lux-card", `group reveal lux-card" style="transition-delay:${i * 90}ms`)).join("");
+  grid.querySelectorAll(".lux-card").forEach(el => el.classList.add("in"));
+  attachAddButtons();
+}
+
+document.querySelectorAll(".tabs button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.filter;
+    render();
+    window.scrollTo({ top: document.querySelector("#productGrid").offsetTop - 130, behavior: "smooth" });
+  });
+});
+
+document.getElementById("sortSel").addEventListener("change", e => { activeSort = e.target.value; render(); });
+
+let cart = [];
+const cartCountEl = document.getElementById("cartCount");
+const drawer = document.getElementById("cartDrawer");
+const cartItems = document.getElementById("cartItems");
+const cartEmpty = document.getElementById("cartEmpty");
+const cartFooter = document.getElementById("cartFooter");
+const cartSubtotal = document.getElementById("cartSubtotal");
+
+function syncCart() {
+  let total = 0, count = 0;
+  cart.forEach(i => { total += i.sale * i.qty; count += i.qty; });
+  cartCountEl.textContent = count;
+  cartSubtotal.textContent = fmt(total);
+  if (cart.length) {
+    cartItems.classList.remove("hidden");
+    cartEmpty.classList.add("hidden");
+    cartFooter.classList.remove("hidden");
+  } else {
+    cartItems.classList.add("hidden");
+    cartEmpty.classList.remove("hidden");
+    cartFooter.classList.add("hidden");
+  }
+  cartItems.innerHTML = cart.map(item => `
+    <div class="flex gap-4 border-b border-line pb-5 last:border-0 last:pb-0">
+      <img src="${item.img}" class="h-24 w-24 object-cover rounded-sm" alt="">
+      <div class="flex-1">
+        <p class="text-[9px] tracking-[0.25em] uppercase text-taupe">${item.catLabel}</p>
+        <p class="font-serif text-lg text-ink mt-0.5 leading-snug">${item.name}</p>
+        <div class="mt-2.5 flex items-center justify-between">
+          <div class="flex items-center border border-line bg-cream">
+            <button class="px-2.5 py-1.5 text-sm text-ink hover:bg-bone" data-dec="${item.id}">−</button>
+            <span class="px-2 py-1.5 text-sm text-ink">${item.qty}</span>
+            <button class="px-2.5 py-1.5 text-sm text-ink hover:bg-bone" data-inc="${item.id}">+</button>
+          </div>
+          <span class="font-serif text-xl text-ink">${fmt(item.sale * item.qty)}</span>
+        </div>
+      </div>
+      <button class="text-taupe hover:text-clay transition self-start" data-del="${item.id}" aria-label="Remove">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"/></svg>
+      </button>
+    </div>`).join("");
+  cartItems.querySelectorAll("button[data-inc]").forEach(b => b.onclick = () => { const it = cart.find(x => x.id == b.dataset.inc); it.qty++; syncCart(); });
+  cartItems.querySelectorAll("button[data-dec]").forEach(b => b.onclick = () => { const it = cart.find(x => x.id == b.dataset.dec); if (it.qty > 1) it.qty--; else cart = cart.filter(x => x.id != it.id); syncCart(); });
+  cartItems.querySelectorAll("button[data-del]").forEach(b => b.onclick = () => { cart = cart.filter(x => x.id != b.dataset.del); syncCart(); });
+}
+
+function addToCart(id) {
+  const p = PRODUCTS.find(x => x.id == id);
+  const existing = cart.find(x => x.id == id);
+  if (existing) existing.qty++;
+  else cart.push({ ...p, offer: p.offer || 0, price: p.price, qty: 1 });
+  syncCart();
+  toast(p.name + " added to your bag");
+}
+
+function attachAddButtons() {
+  grid.querySelectorAll("button[data-add]").forEach(b => b.addEventListener("click", () => addToCart(b.dataset.add)));
+}
+
+let toastTimer;
+function toast(msg) {
+  document.getElementById("toastMsg").textContent = msg;
+  const t = document.getElementById("toast");
+  t.classList.remove("opacity-0", "translate-y-4");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.add("opacity-0", "translate-y-4"), 2800);
+}
+
+document.getElementById("cartBtn").onclick = () => { drawer.classList.remove("hidden"); };
+document.querySelectorAll("[data-close-cart]").forEach(el => el.onclick = () => drawer.classList.add("hidden"));
+document.querySelectorAll("[data-close-menu]").forEach(el => el.onclick = () => document.getElementById("mobileMenu").classList.add("hidden"));
+document.getElementById("menuBtn").onclick = () => document.getElementById("mobileMenu").classList.remove("hidden");
+
+document.getElementById("toTop").onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+const scrollbar = document.getElementById("scrollbar");
+const toTop = document.getElementById("toTop");
+let ticking = false;
+function onScroll() {
+  const y = window.scrollY;
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  scrollbar.style.transform = "scaleX(" + (h ? y / h : 0) + ")";
+  toTop.style.opacity = y > 600 ? "1" : "0";
+  toTop.style.pointerEvents = y > 600 ? "auto" : "none";
+  ticking = false;
+}
+window.addEventListener("scroll", () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.classList.add("in");
+      observer.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+document.querySelectorAll(".magnetic").forEach(el => {
+  const strength = 24;
+  el.addEventListener("mousemove", e => {
+    const r = el.getBoundingClientRect();
+    const x = (e.clientX - (r.left + r.width / 2)) / r.width;
+    const y = (e.clientY - (r.top + r.height / 2)) / r.height;
+    el.style.transform = "translate(" + x * strength + "px," + y * strength + "px)";
+  });
+  el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+});
+
+function tickTimer() {
+  const now = new Date();
+  const end = new Date(now); end.setHours(23, 59, 59, 999);
+  const diff = Math.max(0, end - now);
+  const h = String(Math.floor(diff / 3600000)).padStart(2, "0");
+  const m = String(Math.floor(diff / 60000) % 60).padStart(2, "0");
+  const s = String(Math.floor(diff / 1000) % 60).padStart(2, "0");
+  document.getElementById("cdTime").textContent = h + ":" + m + ":" + s;
+}
+tickTimer();
+setInterval(tickTimer, 1000);
+
+render();
+</script>
+</body>
+</html>
